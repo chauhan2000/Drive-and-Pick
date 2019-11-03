@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<conio.h>
 int main() {
   // creating a FILE variable
   FILE *fptr;
@@ -10,9 +11,12 @@ int main() {
   char name[40];
   char veh[10];
   char so[25];
+  char us[15];
+  char password[10];
+  
 
   // open the file in write mode
-  fptr = fopen("customer", "a");
+  fptr = fopen("customer.txt", "a");
 
   if (fptr != NULL) {
     printf("File created successfully!\n");
@@ -32,11 +36,18 @@ int main() {
   scanf("%s",&veh);
 printf("Enter source: \n");
   scanf("%s",&so);
+printf("\n --------------------------- ");
+printf("\n ENTER USERNAME: \n");
+  scanf("%s",&us);
+printf("\n ENTER PASSWORD: \n"); 
+scanf("%s",&password);
+
 
 
   // write data in file
   fprintf(fptr, "%s %lld", name, Phone_No);
   fprintf(fptr, "%s %s", veh, so);
+  fprintf(fptr, "%s %s", us, password);
 
   // close connection
   fclose(fptr);
