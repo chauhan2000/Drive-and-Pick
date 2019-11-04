@@ -29,7 +29,6 @@ FILE *ptr;
   }
   else {
     printf("Failed to create the file.\n");
-    return -1;
   }
 
   // get student detail
@@ -54,6 +53,7 @@ scanf("%s",&password);
   fprintf(ptr, "%s %lld", name, Phone_No);
   fprintf(ptr, "%s %s", veh, so);
   fprintf(ptr, "%s %s", us, password);
+  fprintf(ptr, "\n");
 
   // close connection
   fclose(ptr);
@@ -82,7 +82,7 @@ printf("password:\n");
     }while(password[p-1]!='\r'); 
     password[p-1]='\0'; 
     printf("Username : %s",name);
-   printf("\nYou have entered %s as password.",password); 
+   printf("\n Password :",password); 
     getch(); 
  
 
@@ -99,7 +99,7 @@ printf("password:\n");
     scanf("%s", path);
 
     /* Input word to search in file */
-    printf(" to search in file: ",name);
+    printf(" to search in file: ",password);
 
 
     /* Try to open file */
@@ -116,24 +116,22 @@ printf("password:\n");
 
 
     // Find index of word in fptr
-    indexOf(fptr, name, &line, &col);
+    indexOf(fptr, password, &line, &col);
 
        if (line != -1)
-        printf("'%s' found at line: %d, col: %d\n", name, line + 1, col + 1);
+        printf("'%s' found at line: %d, col: %d\n", password, line + 1, col + 1);
     else
-        printf("'%s' does not exists.", name);
+        printf("'%s' does not exists.", password);
     
         
     // Close file
     fclose(fptr);
 
-    return 0;
-
 
 
 
 }
-int indexOf(FILE *fptr, const char *name, int *line, int *col)
+int indexOf(FILE *fptr, const char *password, int *line, int *col)
 {
     char str[BUFFER_SIZE];
     char *pos;
@@ -146,7 +144,7 @@ int indexOf(FILE *fptr, const char *name, int *line, int *col)
         *line += 1;
 
         // Find first occurrence of word in str
-            pos = strstr(str, name);
+            pos = strstr(str, password);
 
         if (pos != NULL)
         {
