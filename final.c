@@ -313,6 +313,11 @@ int main()
     int ch,y;
 while(1)
 {
+for(y=0;y<=166;y++)
+{
+printf("*");
+}
+
 for(y=0;y<=13;y++)
 {
 printf("****");
@@ -320,7 +325,14 @@ sleep(1);
 printf("Welcome");
 }
 printf("****");
-printf("\n\n\n\n\t\t\t\t\t\t Hello, Would you like to log in or register");
+for(y=0;y<=166;y++)
+{
+printf("*");
+}
+printf("**********");
+printf("\n\n\n\n\t\t\t\t\t\t\t\t\t Hello, Hope You are Doing Great");
+printf("\n\n\t\t\t\t\t\t\t\t Would you like to log in or register yourself");
+printf("\n\n\t\t\t\t\t\t\t If you are new Customer Then first register yourself else signup");
 sleep(2);
 printf("\n[1] Login\n");
 sleep(2);
@@ -328,7 +340,7 @@ printf("[2] Register");
 sleep(2);
 printf("\n[3] Order");
 sleep(2);
-printf("\n[5] Exit");
+printf("\n[5] Exit\n");
 scanf("%d",&ch);
 	switch (ch)
 {
@@ -340,7 +352,7 @@ case 2:
 	signup();
 	order();
 break;
-case 3:
+//case 3:
 	//order();
 case 4:
 	default:
