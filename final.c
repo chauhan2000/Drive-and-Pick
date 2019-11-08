@@ -2,6 +2,7 @@
 #include <string.h>
 #include<conio.h>
 #include<stdlib.h>
+#include<unistd.h>
 #define BUFFER_SIZE 1000
 int indexOf(FILE *fptr, const char *word, int *line, int *col);
 int nom,noo,noi,nop,amount,count;
@@ -309,10 +310,25 @@ scanf("%d",&j);
 
 int main()
 {
-    int ch;
+    int ch,y;
 while(1)
 {
-printf("Hello, Would you like to log in or register\n[1] Login\n[2] Register\n[3] Order\n[5] Exit");
+for(y=0;y<=13;y++)
+{
+printf("****");
+sleep(1);
+printf("Welcome");
+}
+printf("****");
+printf("\n\n\n\n\t\t\t\t\t\t Hello, Would you like to log in or register");
+sleep(2);
+printf("\n[1] Login\n");
+sleep(2);
+printf("[2] Register");
+sleep(2);
+printf("\n[3] Order");
+sleep(2);
+printf("\n[5] Exit");
 scanf("%d",&ch);
 	switch (ch)
 {
