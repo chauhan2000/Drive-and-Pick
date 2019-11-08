@@ -16,9 +16,10 @@ int showstatus()
 int maggi()
 {
     printf("\n foodorder received");
-    nom++;
+   nom++;
     amount = amount+ 50;
-    count++;
+
+count++;
 }
 
 int omlete()
@@ -45,14 +46,36 @@ int paratha()
     count++;
 }
 
-int deleteT()
+int reset()
 {
-     nom=0;
-     noo=0;
-     noi=0;
-     nop=0;
-     amount=0;
-     count=0;
+int q;
+printf("enter the choice you want to decrease");
+scanf("%d",&q);     
+switch(q)
+{
+case 8:
+	nom=--nom;
+	amount=amount-50;
+	break;
+case 9:
+	noo=--noo;
+	amount = amount+ 30;
+	break;     
+case 10:
+	noi=--noi;
+	amount = amount+ 35;
+	break;     
+case 11:
+	nop=--nop;
+	amount = amount+ 40;
+	break;          
+case 13:
+	count=--count;
+	break;
+default:
+	printf("bye bye");
+	break;
+}
 }
 
 
@@ -61,10 +84,10 @@ int main()
 int ch,i;
 
 
-while(ch<=7)
+while(1)
 {
 //Choose food item from Menu
-    printf("CHOOSE: ");
+    printf(" \n CHOOSE: ");
     printf("\n Sno.      Itemlist  ");
     printf("\n 1         maggi     ");
     printf("\n 2         omlete    ");
@@ -72,7 +95,7 @@ while(ch<=7)
     printf("\n 4         paratha   ");
     //printf("Other Options");
     printf("\n 5         showstatus");
-    printf("\n 6         deleteT");
+    printf("\n 6         reset");
     printf("\n 7         exit");
 
 printf("\nenter your choice");
@@ -95,7 +118,7 @@ scanf("%d",&ch);
             showstatus();
             break;
         case 6:
-            deleteT();
+            reset();
             break;
 case 7:
 exit(0);
