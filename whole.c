@@ -1,18 +1,26 @@
 #include <stdio.h>
 #include <string.h>
-#include<conio.h>
-#include<stdlib.h>
-#include<unistd.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <unistd.h>
+#include <time.h>
+#include<math.h>
 #define BUFFER_SIZE 1000
 #define INFINITY 9999
 #define MAX 10
 int indexOf(FILE *fptr, const char *word, int *line, int *col);
-void dijkstra(int G[MAX][MAX],int n,int startnode);
 int nom,noo,noi,nop,amount,count;
 int dij(){
 int G[MAX][MAX],i,j,n,u;
 	printf("Enter no. of vertices:");
 	scanf("%d",&n);
+printf("LOCATION             NODES \n");
+printf("Choba Market            1\n");
+printf("Rumuosi Market          2\n");
+printf("Market Road             3\n");
+printf("Chole hotel             4\n");
+ 
 	printf("\nEnter the adjacency matrix:\n");
 	
 	for(i=0;i<n;i++)
@@ -105,7 +113,9 @@ FILE *ptr;
   char so[25];
   char us[15];
   char password[10];
-  
+   struct tm* local; 
+    time_t t = time(NULL); 
+    local = localtime(&t); 
 
   // open the file in write mode
   ptr = fopen("customer.txt", "a");
@@ -136,13 +146,13 @@ scanf("%s",&password);
 
 
   // write data in file
+  fprintf(ptr,asctime(local));
   fprintf(ptr, "%s %lld", name, Phone_No);
   fprintf(ptr, "\t");
   fprintf(ptr, "%s %s", veh, so);
   fprintf(ptr, "\t");
   fprintf(ptr, "%s %s", us, password);
   fprintf(ptr, "\n");
-
   // close connection
   fclose(ptr);
 
@@ -461,9 +471,7 @@ printf("\n[1] Login\n");
 sleep(2);
 printf("[2] Register");
 sleep(2);
-printf("\n[3] Order");
-sleep(2);
-printf("\n[4] Exit\n");
+printf("\n[3] Exit\n");
 scanf("%d",&ch);
 	switch (ch)
 {
